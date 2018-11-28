@@ -1,13 +1,13 @@
-import React from 'react';
-
-
+import React from "react";
 
 const GameCard = () => {
-    return (
-      <div>
-        <h1>Game Card</h1>
-      </div>
-    );
-  };
+  <div className="ui card">
+    <div className="image">
+      <span className="ui green ribbon label">$32</span>
+      <img src="" alt="Game Cover" />
+    </div>
+    <div className="content" />
+  </div>;
+};
 
-export default GameCard
+export default GameCard;
