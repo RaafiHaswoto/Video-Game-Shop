@@ -1,5 +1,5 @@
 import React from "react";
-import GamesList from "./GamesList";
+// import GamesList from "./GamesList";
 
 const GameCard = ({ game }) => (
   <div className="ui card">
