@@ -1,11 +1,11 @@
 import React from 'react';
-import _sortBy from "lodash/sortBy"
+import _orderBy from "lodash/orderBy"
 import GamesList from "./GamesList"
 
 const games = [
     {
         _id: 1,
-        featured: true,
+        featured: false,
         name: "Quadropolis",
         url:'https://boardgamegeek.com/boardgame/219618/quadropolis-public-services',
         thumbnail:
@@ -16,7 +16,7 @@ const games = [
     },
     {
         _id: 2,
-        featured: true,
+        featured: false,
         name: "Five Tribes",
         url:'https://boardgamegeek.com/boardgame/157354/five-tribes',
         thumbnail:
@@ -27,7 +27,7 @@ const games = [
     },
     {
         _id: 3,
-        featured: true,
+        featured: false,
         name: "Roll for The Galaxy",
         url: 'https://boardgamegeek.com/boardgame/132531/roll-galaxy',
         thumbnail:
@@ -44,7 +44,7 @@ class App extends React.Component {
     }
     
     componentDidMount () {
-        this.setState({ games: _sortBy(games, ["name"]) })
+        this.setState({ games: _orderBy(games, ["featured", "name"], ["desc", "asc"]) })
     }
 
     render() { 
