@@ -1,22 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function Featured({featured}) {
+const Featured = ({ featured, toggledFeatured, gameId }) => {
   return (
     <span>
       {featured ? (
-        <a className="ui right yellow corner label">
+        // eslint-disable-next-line jsx-a11y/anchor-is-valid
+        <a
+          onClick={() => toggledFeatured(gameId)}
+          className="ui right yellow corner label"
+        >
           <i className="star icon" />
         </a>
       ) : (
-        <a className="ui right corner label">
+        // eslint-disable-next-line jsx-a11y/anchor-is-valid
+        <a
+          onClick={() => toggledFeatured(gameId)}
+          className="ui right corner label"
+        >
           <i className="empty star icon" />
         </a>
       )}
     </span>
   );
-}
+};
 
 Featured.propTypes = {
-  featured: PropTypes.bool.isRequired
+  featured: PropTypes.bool.isRequired,
+  toggleFeatured: PropTypes.func.isRequired,
+  gameId: PropTypes.number.isRequired
 };
+
+export default Featured;

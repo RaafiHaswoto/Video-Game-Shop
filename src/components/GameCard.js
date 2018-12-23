@@ -2,8 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import Featured from "./Featured";
 
-// import GamesList from "./GamesList";
-
 const GameCard = ({ game }) => (
   <div
     className="ui card"
@@ -14,7 +12,11 @@ const GameCard = ({ game }) => (
   >
     <div className="image">
       <span className="ui green ribbon label">${game.price}</span>
-      <Featured featured={game.featured} />
+      <Featured
+        featured={game.featured}
+        toggleFeatured={game.toggleFeatured}
+        gameId={game._id}
+      />
       <img src={game.thumbnail} alt="Game Cover" />
     </div>
     <div className="content">
