@@ -8,7 +8,7 @@ const GameCard = ({ game }) => (
     </div>
     <div className="content">
       <a href="#" className="header">
-        Quadropolis
+      {game.name}
       </a>
       <div className="meta">
         <i className="icon users" /> {game.players};
