@@ -12,14 +12,8 @@ const GamesList = ({ games, toggleFeatured }) => (
         type="error"
       />
     ) : (
-<<<<<<< HEAD
-      games.map(game => (
-        <GameCard game={game} toggleFeatured={toggleFeatured} key={game._id} />
-      ))
-=======
       games.map(game => <GameCard game={game} toggleFeatured={toggleFeatured} key={game._id} />
       )
->>>>>>> ecae64f3438f4c4d4229be709e5b19afb8c1bd53
     )}
   </div>
 );
