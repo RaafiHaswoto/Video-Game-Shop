@@ -67,7 +67,7 @@ class App extends React.Component {
       <div className="ui container">
         <GamesList
           games={this.state.games}
-          toggleFeature={this.toggleFeatured}
+          toggleFeatured={this.toggleFeatured}
         />
       </div>
     );
