@@ -7,15 +7,15 @@ const Featured = ({ featured, toggleFeatured, gameId }) => (
       {featured ? (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a
-          className="ui right yellow corner label"
+          className="ui right yellow corner label" style={{cursor: "pointer"}}
           onClick={() => toggleFeatured(gameId)}
         >
           <i className="star icon" />
         </a>
       ) : (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a
-          className="ui right corner label"
+        <a 
+          className="ui right corner label" style={{cursor: "pointer"}}
           onClick={() => toggleFeatured(gameId)}
         >
           <i className="star icon" />
