@@ -46,7 +46,7 @@ class GameForm extends Component {
       : this.setState({ tags: [...this.state.tags, tag._id] });
   };
 
-  toggleGenreChange = genre => {
+  handleGenreChange = genre => {
     this.setState({ genre: genre._id})
   }
 
@@ -191,8 +191,8 @@ class GameForm extends Component {
               <input
                 type="radio"
                 id={`genre-${genre._id}`}
-                checked={this.state.genres === genre._id}
-                onChange={() => this.toggleGenreChange(genre)}
+                checked={this.state.genre === genre._id}
+                onChange={() => this.handleGenreChange(genre)}
               />
               <label htmlFor={`genre-${genre._id}`}>{genre.name}</label>
             </div>
