@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 const tags = [
   { _id: 1, name: "dice" },
@@ -21,7 +22,8 @@ class GameForm extends Component {
     players: "",
     featured: false,
     tags: [],
-    genres: 1
+    genres: 1,
+    publisher: 0
   };
 
   handleSubmit = e => {
@@ -47,8 +49,8 @@ class GameForm extends Component {
   };
 
   handleGenreChange = genre => {
-    this.setState({ genre: genre._id})
-  }
+    this.setState({ genre: genre._id });
+  };
 
   render() {
     return (
@@ -170,7 +172,13 @@ class GameForm extends Component {
         </div>
 
         <div className="field">
-          <label>Tags</label>
+          <label
+            style={{
+              marginTop: "22pt"
+            }}
+          >
+            Tags
+          </label>
           {tags.map(tag => (
             <div key={tag._id} className="inline field">
               <input
@@ -185,7 +193,14 @@ class GameForm extends Component {
         </div>
 
         <div className="field">
-          <label htmlFor="genres">Genres</label>
+          <label
+            htmlFor="genres"
+            style={{
+              marginTop: "22pt"
+            }}
+          >
+            Genres
+          </label>
           {genres.map(genre => (
             <div key={genre._id} className="inline field">
               <input
@@ -199,6 +214,32 @@ class GameForm extends Component {
           ))}
         </div>
 
+        <div className="field">
+          <label
+            htmlFor="publishers"
+            style={{
+              marginTop: "22pt"
+            }}
+          >
+            Publishers
+            <select
+              style={{
+                marginTop: "12pt"
+              }}
+              name="publisher"
+              value={this.state.publisher}
+              onChange={this.handleNumberChange}
+            >
+              <option value="0">Choose Publisher</option>
+              {this.props.publishers.map(publisher => (
+                <option value={publisher._id} key={publisher._id}>
+                  {publisher.name}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+
         <button className="ui button" type="submit">
           Create
         </button>
@@ -206,5 +247,18 @@ class GameForm extends Component {
     );
   }
 }
+
+GameForm.propTypes = {
+  publishers: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired
+    })
+  ).isRequired
+};
+
+GameForm.defaultProps = {
+  publishers: []
+};
 
 export default GameForm;

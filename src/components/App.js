@@ -3,9 +3,22 @@ import _orderBy from "lodash/orderBy";
 import GamesList from "./GamesList";
 import GameForm from "./GameForm";
 
+
+const publishers = [
+  {
+    _id: 1,
+    name: "Days of Wonder"
+  },
+  {
+    _id: 1,
+    name: "Rio Grande Games"
+  }
+]
+
 const games = [
   {
     _id: 1,
+    publisher: 1,
     featured: false,
     name: "Quadropolis",
     url:
@@ -18,6 +31,7 @@ const games = [
   },
   {
     _id: 2,
+    publisher: 2, 
     featured: false,
     name: "Five Tribes",
     url: "https://boardgamegeek.com/boardgame/157354/five-tribes",
@@ -29,6 +43,7 @@ const games = [
   },
   {
     _id: 3,
+    publisher: 3,
     featured: false,
     name: "Roll for The Galaxy",
     url: "https://boardgamegeek.com/boardgame/132531/roll-galaxy",
@@ -40,6 +55,7 @@ const games = [
   },
   {
     _id: 4,
+    publisher: 4, 
     featured: false,
     name: "Gloomhaven",
     url:
@@ -52,6 +68,7 @@ const games = [
   },
   {
     _id: 5,
+    publisher: 5,
     featured: false,
     name: "Pandemic Legacy: Season 1",
     url: "https://boardgamegeek.com/boardgame/157354/five-tribes",
@@ -63,6 +80,7 @@ const games = [
   },
   {
     _id: 6,
+    publisher: 6,
     featured: false,
     name: "Through the Ages: A New Story of Civilization",
     url: "https://boardgamegeek.com/boardgame/132531/roll-galaxy",
@@ -74,6 +92,7 @@ const games = [
   },
   {
     _id: 7,
+    publisher: 7,
     featured: false,
     name: "Quadropolis",
     url:
@@ -86,6 +105,7 @@ const games = [
   },
   {
     _id: 8,
+    publisher: 8,
     featured: false,
     name: "Terraforming Mars",
     url: "https://boardgamegeek.com/boardgame/157354/five-tribes",
@@ -97,6 +117,7 @@ const games = [
   },
   {
     _id: 9,
+    publisher: 9,
     featured: false,
     name: "Roll for The Galaxy",
     url: "https://boardgamegeek.com/boardgame/132531/roll-galaxy",
@@ -134,7 +155,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="ui container">
-        <GameForm />
+        <GameForm publishers={publishers}/>
         <br />
         <GamesList
           games={this.state.games}
