@@ -4,6 +4,10 @@ class GameForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
   };
+
+
+
+  
   render() {
     return (
       <form className="ui form" onSubmit={this.handleSubmit}>
