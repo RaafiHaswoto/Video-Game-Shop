@@ -6,7 +6,8 @@ class GameForm extends Component {
     description: "",
     price: 0,
     duration: 0,
-    players: ""
+    players: "",
+    featured: false
   };
 
   handleSubmit = e => {
@@ -19,6 +20,10 @@ class GameForm extends Component {
 
   handleNumberChange = e => {
     this.setState({ [e.target.name]: parseInt(e.target.value, 10) });
+  };
+
+  handleCheckboxChange = e => {
+    this.setState({ [e.target.name]: e.target.checked});
   };
 
   render() {
@@ -39,7 +44,7 @@ class GameForm extends Component {
             type="text"
             id="name"
             name="name"
-            placeholder="Full Game Title"
+            placeholder="Title"
             value={this.state.name}
             onChange={this.handleStringChange}
           />
@@ -60,7 +65,7 @@ class GameForm extends Component {
             type="text"
             id="description"
             name="description"
-            placeholder="Game Description"
+            placeholder="Description"
             value={this.state.description}
             onChange={this.handleStringChange}
           />
@@ -76,7 +81,7 @@ class GameForm extends Component {
                 fontSize: "14pt"
               }}
             >
-              Price (in cents)
+              Price (cents)
             </label>
             <input
               type="number"
@@ -96,7 +101,7 @@ class GameForm extends Component {
                 fontSize: "14pt"
               }}
             >
-              Duration (in min)
+              Duration (minutes)
             </label>
             <input
               type="number"
@@ -126,6 +131,18 @@ class GameForm extends Component {
               onChange={this.handleStringChange}
             />
           </div>
+        </div>
+
+        <div className="inline field">
+          <input
+            type="checkbox"
+            id="featured"
+            name="featured"
+            checked={this.state.featured}
+            onChange={this.handleCheckboxChange}
+          />
+
+          <label htmlFor="featured">Featured?</label>
         </div>
 
         <button className="ui button" type="submit">
