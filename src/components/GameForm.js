@@ -1,13 +1,23 @@
 import React, { Component } from "react";
 
 class GameForm extends Component {
+    state = {
+        name: ''
+    }
+
+
+
   handleSubmit = e => {
     e.preventDefault();
   };
 
 
+  handleNameChange = e => {
+      this.setState({ name: e.target.value})
+  }
 
-  
+
+
   render() {
     return (
       <form className="ui form" onSubmit={this.handleSubmit}>
@@ -17,7 +27,8 @@ class GameForm extends Component {
             type="text"
             id="name"
             placeholder="Full Game Title"
-            ref={input => (this.name = input)}
+            value = {this.state.name}
+            onChange = {this.handleNameChange}
           />
         </div>
 
