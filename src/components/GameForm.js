@@ -78,15 +78,32 @@ class GameForm extends Component {
             </div>
           </div>
           <div className="four wide column">
-            <ReactImageFallback
+          <ReactImageFallback
               src={this.state.thumbnail}
               fallbackImage="http://via.placeholder.com/250x250"
-              alt="thumbnail"
+              alt="Thumbnail"
               className="ui image"
               style={{
                   marginTop:"45pt"
               }}
-            />
+              />
+              
+            {/* {this.state.thumbnail ? (
+              <img
+                src={this.state.thumbnail}
+                alt="thumbnail"
+                className="ui image"
+              />
+            ) : (
+              <img
+                src="http://via.placeholder.com/250x250"
+                alt="thumbnail"
+                className="ui image"
+                style={{
+                  marginTop: "42pt"
+                }}
+              />
+            )} */}
           </div>
         </div>
 
