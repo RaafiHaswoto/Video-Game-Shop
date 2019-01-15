@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import ReactImageFallback from "react-image-fallback"
+import ReactImageFallback from "react-image-fallback";
 
 class GameForm extends Component {
   state = {
@@ -78,16 +78,16 @@ class GameForm extends Component {
             </div>
           </div>
           <div className="four wide column">
-          <ReactImageFallback
+            <ReactImageFallback
               src={this.state.thumbnail}
               fallbackImage="http://via.placeholder.com/250x250"
               alt="Thumbnail"
               className="ui image"
               style={{
-                  marginTop:"45pt"
+                marginTop: "45pt"
               }}
-              />
-              
+            />
+
             {/* {this.state.thumbnail ? (
               <img
                 src={this.state.thumbnail}
@@ -227,9 +227,13 @@ class GameForm extends Component {
           </label>
         </div>
 
-        <button className="ui button" type="submit">
-          Create
-        </button>
+        <div className="ui fluid buttons">
+          <button className="ui primary button" type="submit">
+            Create
+          </button>
+          <div className="or" />
+          <div className="ui button" onClick={this.props.cancel}>Cancel</div>
+        </div>
       </form>
     );
   }
@@ -241,7 +245,8 @@ GameForm.propTypes = {
       _id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired
     })
-  ).isRequired
+  ).isRequired,
+  cancel: PropTypes.func.isRequired
 };
 
 GameForm.defaultProps = {
