@@ -1,7 +1,8 @@
 ## Video Game Shop - React Project
 
-### `npm install`
-### `npm start`
+Git clone before, after that 
+
+`npm install` and `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
