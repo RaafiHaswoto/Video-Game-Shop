@@ -160,6 +160,19 @@ class App extends React.Component {
     this.setState({ showGameForm: false });
   };
 
+  addGame = game => {
+    this.setState({
+      games: this.sortGames([
+        ...this.state.games, 
+        {
+          ...game,
+          _id: this.state.games.length + 1
+        }
+      ]),
+      showGameForm: false
+    })
+  }
+
   render() {
     const numberOfColumns = this.state.showGameForm ? "ten" : "sixteen";
     return (
@@ -167,7 +180,9 @@ class App extends React.Component {
         <TopNavigation showGameForm={this.showGameForm} />
         {this.state.showGameForm && (
           <div className="six wide column">
-            <GameForm publishers={publishers} cancel={this.hideGameForm} />
+            <GameForm publishers={publishers} cancel={this.hideGameForm} 
+            submit={this.addGame}/>
+          
           </div>
         )}
 
