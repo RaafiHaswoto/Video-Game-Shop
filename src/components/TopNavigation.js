@@ -13,7 +13,7 @@ const TopNavigation = ({ showGameForm }) => (
   </div>
 );
 
-TopNavigation.PropTypes = {
+TopNavigation.propTypes = {
   showGameForm: PropTypes.func.isRequired
 };
 
