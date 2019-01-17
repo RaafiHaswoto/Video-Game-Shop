@@ -25,8 +25,8 @@ class GameForm extends Component {
     if (!data.players) errors.players = "This field can't be blank";
     if (!data.publisher) errors.publisher = "This field can't be blank";
     if (!data.thumbnail) errors.thumbnail = "This field can't be blank";
-    if (data.price <= 0) errors.price = "Can't be ZERO";
-    if (data.duration <= 0) errors.duration = "Too Short";
+    if (data.price <= 0) errors.price = "Can't be Zero";
+    if (data.duration <= 0) errors.duration = "Can't be Zero";
 
     return errors;
   }
